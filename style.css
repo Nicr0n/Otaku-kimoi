@@ -1,0 +1,464 @@
+/*
+Theme Name: Otaku Kimoi
+Author: the Nicron
+Author URI: https://Nicr0n.com/
+Description: None
+Version: 1.0
+Tags: Comic , Otaku
+*/
+
+body {
+    margin: 0px;
+    font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+    font-family: SimHei;
+    overflow-x: hidden;
+    font-family: "Source Sans Pro", "Hiragino Sans GB", "Microsoft Yahei", SimSun, Helvetica, Arial, Sans-serif;
+    line-height: 1.42857143;
+}
+
+ul, li {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    list-style: none;
+}
+
+h2 {
+    margin-top: 0px;
+    font-size: 22px;
+    line-height: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*整体布局*/
+.all_layout {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    padding-top: 50px;
+}
+
+/*背景图片*/
+.bg {
+    background-image: url(/wordpress/wp-content/themes/Otaku-Kimoi/images/bg.png);
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    position: fixed;
+    z-index: -1;
+    top: 50px;
+    left: 215px;
+    right: 0;
+    bottom: 0;
+}
+
+/*顶部栏左部分*/
+.bar-top_right {
+    float: right;
+}
+
+/*顶部栏*/
+.bar-top {
+    position: fixed;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #E6E6FA;
+    width: 100%;
+    z-index: 99999999;
+    top: 0;
+}
+
+/*logo*/
+.logo {
+    float: left;
+    margin-left: 20px;
+    margin-right: 30px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+/*logo图片*/
+.logo img {
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
+/*顶部栏右侧*/
+.bar-top_right {
+}
+
+.bar-top_right ul {
+}
+
+.bar-top_right li {
+    float: right;
+    padding-right: 30px;
+    line-height: 50px;
+}
+
+.bar-top_right li a {
+    display: block;
+    text-decoration: none;
+}
+
+.bar-top_right li a i {
+    text-decoration: none;
+    color: #000000;
+}
+
+.bar-top_right span {
+    color: black;
+}
+
+/*搜索工具栏*/
+.search_box {
+    float: left;
+    height: 100%;
+}
+
+.search_box form {
+    position: relative;
+    padding-top: 1.5%;
+    height: 100%;
+}
+
+.search_box input {
+    position: relative;
+    display: block;
+    float: left;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: 0px;
+    padding: 6px;
+    padding-left: 10px;
+    margin: 0px;
+    height: 43%;
+    width: 29%;
+    outline: none;
+    box-shadow: none;
+    font-size: 15px;
+    transform: translateY(12.5%);
+    transition-property: width;
+    transition-duration: 0.3s;
+    /* Safari and Chrome */
+    -webkit-transition-property: width;
+    -webkit-transition-duration: 1s;
+}
+
+/*搜索按钮*/
+.search_button {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    margin-top: 4px;
+    width: 10%;
+    height: 68%;
+    border: none;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    outline: none;
+}
+
+.search_box input:focus {
+    width: 60%;
+}
+
+/*分享二维码*/
+#share-qrcode {
+    float: right;
+    right: 97px;
+    position: absolute;
+    z-index: 999;
+    top: 42px;
+}
+
+/*登录模块*/
+.login {
+    border: none;
+}
+
+.login-form {
+    z-index: 998;
+    position: fixed;
+    top: 5%;
+    right: 0%;
+    width: 300px;
+    height: 230px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: solid 1px #666;
+    background-color: #fff;
+    display: none;
+}
+
+.login-close {
+    padding: 2px;
+}
+
+.loginlabel {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    line-height: 10%;
+}
+
+.form {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.input input {
+    display: block;
+    font-size: 16px;
+    height: 30px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 0.5px solid #86A697;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 4%;
+    line-height: 30px;
+    background-color: #5DAC81;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+}
+
+.login-header {
+    display: inline;
+    margin-top: 1%;
+}
+
+.login-form-mask {
+    z-index: 997;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    filter: alpha(opacity=100);
+    display: none
+}
+
+.sidebar {
+    height: calc(100% - 305px);
+    width: 215px;
+}
+
+/*左侧边栏*/
+.sidebar-left-contain {
+    left: 0;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: rgba(54, 44, 124, 0.25);
+    background-color: #23282d;
+    position: fixed;
+    overflow: scroll;
+}
+
+.sidebar-left-contain::-webkit-scrollbar{
+    display: none;
+}
+
+.nav-icon {
+    margin-right: 15px;
+}
+
+.nav-font {
+    color: #eaebed;
+    opacity: 0.8;
+    font-size: 16px;
+    padding: 10px;
+
+}
+
+.nav {
+    color: #eaebed;
+    opacity: 0.8;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    display: block;
+    cursor: pointer;
+    transition-property: opacity, background-color;
+    transition-duration: 0.5s;
+}
+
+.sec-nav {
+    background-color: #12171d;
+}
+
+.nav:hover {
+    opacity: 1;
+    background: grey;
+    outline: 0;
+}
+
+.drop-down {
+    overflow-x: hidden;
+}
+
+.drop-down-content {
+    display: none;
+}
+
+/*个人信息*/
+.person-info {
+    height: 215px;
+    border-bottom: 1px;
+    border-bottom-color: rgba(54, 44, 124, 0.25);
+    border-bottom-style: solid;
+    text-align: center;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.person-info span {
+    position: relative;
+    top: 15px;
+}
+
+.avatar {
+    height: 130px;
+    width: 130px;
+    position: relative;
+    padding-top: 10px;
+    left: calc((100% - 130px) / 2);
+    border-radius: 50%;
+}
+
+.content {
+    box-sizing: border-box;
+    padding-left: 216px;
+    height: 100%;
+    width: 100%;
+}
+
+/*live2d模型*/
+.waifu{
+    position: fixed;
+    bottom: 0;
+    background-color: #23282d;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: rgba(54, 44, 124, 0.25);
+}
+
+/*右侧边栏*/
+.sidebar-right-contain {
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: rgba(54, 44, 124, 0.25);
+    background-color: whitesmoke;
+    opacity: 0.5;
+    display: table-cell;
+    height: 100%;
+}
+
+/*网页主体容器*/
+.main-container {
+    padding-bottom: 50px;
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+.center-part {
+    vertical-align: top;
+    height: 100%;
+    display: table-cell;
+}
+
+.main-title{
+    padding-top: 30px;
+    width: 100%;
+}
+
+.main-span{
+    font-size: 50px;
+    font-family: Caflisch Script;
+    color: white;
+    text-align: center;
+    display: block;
+}
+
+.moto-span{
+    font-size: 23px;
+    color: white;
+    text-align: center;
+    display: block;
+    font-family: KaiTi;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.small-span{
+    font-size: 19px;
+    color: white;
+    text-align: center;
+    display: block;
+    font-family: Caflisch Script;
+}
+
+.blog-post-layout {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 50px;
+}
+
+/*气泡文章*/
+.bubble {
+    display: inline-block;
+    height: 300px;
+    width: calc(50% - 25px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.bubble-contain {
+    box-sizing: border-box;
+    padding: 138px 20px 0px 20px;
+    height: 300px;
+    border-radius: 9px;
+    border: 0.5px;
+    border-style: groove;
+    background: white;
+    opacity: 0.5;
+}
+
+.bubble-article {
+    text-align: center;
+}
+
+/*底部栏*/
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px;
+    z-index: 0;
+    box-sizing: border-box;
+    margin-left: 216px;
+    background: white;
+    opacity: 0.6;
+}
+
+/*列左对齐*/
+.col {
+    float: left;
+}
