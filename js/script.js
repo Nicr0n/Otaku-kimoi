@@ -35,7 +35,36 @@ $('.drop-down>span').on('click',function () {
         $(this).next('ul').slideUp(200);
         $(this).next('ul').addClass('drop-down-content');
     }
-})
+});
+
+//设置右侧推送切换事件
+$('.rpt1').on('click',function () {
+    $('.recent-comments').fadeOut(0);
+    $('.recent-comments').removeClass('fadein');
+    $('.hot-articles').fadeOut(0);
+    $('.hot-articles').removeClass('fadein');
+    $('.recent-articles').fadeIn(0);
+    $('.recent-articles').addClass('fadein')
+});
+
+$('.rpt2').on('click',function () {
+    $('.recent-comments').fadeOut(0);
+    $('.recent-comments').removeClass('fadein');
+    $('.recent-articles').fadeOut(0);
+    $('.recent-articles').removeClass('fadein');
+    $('.hot-articles').fadeIn(0);
+    $('.hot-articles').addClass('fadein')
+
+});
+
+$('.rpt3').on('click',function () {
+    $('.recent-articles').fadeOut(0);
+    $('.recent-articles').removeClass('fadein');
+    $('.hot-articles').fadeOut(0);
+    $('.hot-articles').removeClass('fadein');
+    $('.recent-comments').fadeIn(0);
+    $('.recent-comments').addClass('fadein');
+});
 
 //激活live2d组件
 loadlive2d("live2d", "http://127.0.0.1/wordpress/wp-content/themes/Otaku-Kimoi/model/katou_01/katou_01.model.json");

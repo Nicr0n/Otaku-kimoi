@@ -330,7 +330,7 @@ a {
     top: 15px;
 }
 
-.avatar {
+.left-avatar {
     height: 130px;
     width: 130px;
     position: relative;
@@ -360,11 +360,68 @@ a {
 .sidebar-right-contain {
     border-left-style: solid;
     border-left-width: 1px;
-    border-left-color: rgba(54, 44, 124, 0.25);
+    border-left-color: rgb(54, 44, 124);
     background-color: whitesmoke;
-    opacity: 0.5;
+    opacity: 0.8;
     display: table-cell;
     height: 100%;
+}
+
+.right-contain{
+    margin-bottom: 20px;
+}
+
+.right-push{
+    display: block;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: rgba(96,96,96,0.4);
+}
+
+.right-push-tabs{
+    display: inline-block;
+    font-size: 25px;
+    padding-left: calc((215px - 75px)/6);
+    padding-right: calc((215px - 75px)/6);
+    border-style: solid;
+    border-width: 0px;
+    border-color: black;
+    cursor: pointer;
+}
+
+.right-push-switch{
+    display: none;
+}
+
+.fade{
+    opacity: 0;
+    transition: opacity;
+    transition-duration: 0.5s;
+}
+
+.fadein{
+    opacity: 1;
+}
+
+
+.right-title{
+    font-size: 20px;
+    display: block;
+}
+
+.tags{
+    padding: 10px;
+}
+
+.label{
+    /*迷迭香色*/
+    background: #A3ADE3;
+    z-index: 99;
+    padding: 3px;
+    margin: 4px 4px 4px 0px;
+    border-radius: 7%;
+    border-style: solid;
+    border:0px;
 }
 
 /*网页主体容器*/
@@ -435,8 +492,53 @@ a {
     border-radius: 9px;
     border: 0.5px;
     border-style: groove;
-    background: white;
-    opacity: 0.5;
+    border-color: black;
+    background: rgba(255,255,255,0.6);
+    color: black;
+}
+
+.article-title{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.article-info{
+    padding: 8px;
+    border-top: black;
+    border-top-style: solid;
+    border-width: 0.7px;
+    position: relative;
+    bottom: -50px;
+    opacity: 0;
+}
+
+.article-date{
+    float: left;
+}
+
+.article-viewer{
+    float: right;
+}
+
+.article-comments{
+    float: right;
+    margin-right: 10px;
+}
+
+.bubble:hover .bubble-contain{
+    background: rgba(255,255,255,0.3);
+    transition-duration: 0.3s;
+}
+
+.bubble:hover h2{
+    transform: translateY(-30px);
+    transition-duration: 0.4s;
+}
+
+.bubble:hover .article-info{
+    opacity: 1;
+    transform: translateY(10px);
+    transition-duration: 0.4s;
 }
 
 .bubble-article {

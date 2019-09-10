@@ -1,9 +1,11 @@
 <div class="sidebar-left-contain sidebar col">
     <aside class="sidebar-left">
         <div class="person-info">
-            <div class="avatar">
+            <div class="left-avatar">
                 <a href="">
-                    <?php echo get_avatar(1, 130); ?>
+                    <?php
+                    $avatar = get_wp_user_avatar("1",130,'','',array('left-avatar'));
+                    echo $avatar ?>
                 </a>
             </div>
             <span class="">Hi,I'm Nicron</span>
