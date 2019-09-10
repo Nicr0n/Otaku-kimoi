@@ -272,6 +272,10 @@ a {
     display: none;
 }
 
+.homepage{
+    margin-top: 10px;
+}
+
 .nav-icon {
     margin-right: 15px;
 }
@@ -478,10 +482,9 @@ a {
 
 /*气泡文章*/
 .bubble {
-    display: inline-block;
+    display: block;
     height: 300px;
-    width: calc(50% - 25px);
-    margin-right: 20px;
+    width: calc(100% - 25px);
     margin-bottom: 20px;
 }
 
@@ -526,7 +529,7 @@ a {
 }
 
 .bubble:hover .bubble-contain{
-    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(8px);
     transition-duration: 0.3s;
 }
 

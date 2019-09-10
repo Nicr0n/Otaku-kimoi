@@ -7,6 +7,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css" type="text/css"/>
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php bloginfo('template_url'); ?>/model/">
 </head>
 <title>Nicron's bolg</title>
 <body>

@@ -3,9 +3,7 @@
         <div class="person-info">
             <div class="left-avatar">
                 <a href="">
-                    <?php
-                    $avatar = get_wp_user_avatar("1",130,'','',array('left-avatar'));
-                    echo $avatar ?>
+                    <?php echo('<img src='.get_wp_user_avatar_src(1)); ?> width="130" height="130" alt="Nicron" class="avatar avatar-130 wp-user-avatar wp-user-avatar-130 alignnone photo left-avatar">
                 </a>
             </div>
             <span class="">Hi,I'm Nicron</span>
@@ -15,7 +13,7 @@
                 <li>
                     <span class="nav-font">导航</span>
                 </li>
-                <li>
+                <li class="homepage">
                     <a class="nav" href="<?php bloginfo('url'); ?>"><i class="fa fa-home nav-icon" aria-hidden="true"></i>首页</a>
                 </li>
                 <!--导航分类标签输出-->
