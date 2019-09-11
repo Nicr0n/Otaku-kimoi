@@ -83,9 +83,9 @@
                                     <div class="bubble-article">
                                         <h2 class="article-title"><?php the_title();?></h2>
                                         <div class="article-info">
-                                            <span class="article-date"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;<?php the_time('y-m-d');?></span>
-                                            <span class="article-viewer"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;<?php if(function_exists('the_views')) { the_views(); } ?></span>
-                                            <span class="article-comments"><i class="fa fa-commenting-o" aria-hidden="true"></i>&nbsp;<?php echo(get_comments_number()."条评论");?></span>
+                                            <span class="article-date"><i class="fa fa-calendar-o" aria-hidden="true"></i><?php the_time('y-m-d');?></span>
+                                            <span class="article-viewer"><i class="fa fa-eye" aria-hidden="true"></i><?php if(function_exists('the_views')) { the_views(); } ?></span>
+                                            <span class="article-comments"><i class="fa fa-commenting-o" aria-hidden="true"></i><?php echo(get_comments_number()."条评论");?></span>
                                         </div>
                                     </div>
                                 </div>

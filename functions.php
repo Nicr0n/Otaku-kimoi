@@ -62,9 +62,28 @@ function recent_push(){
     $args = array('numberposts' => 5);
     $recent_posts = wp_get_recent_posts($args);
     foreach( $recent_posts as $recent ){
-        echo '<li>
-<a href="' . get_permalink($recent["ID"]) . '">' .get_avatar($recent["post_author"],50).$recent["post_title"] . '</a>
+        echo '<li class="recent-push-li">
+<a href="' . get_permalink($recent["ID"]) . '">' .'<img src='.get_wp_user_avatar_src($recent["post_author"]).' class="right-avatar">'.'<span class="recent-push">'.$recent["post_title"].'</span>'.'<span class="recent-push-time"><i class="fa fa-calendar-o" aria-hidden="true"></i>'.date("Y.m.d",strtotime($recent["post_modified"])).'</span>'.'</a>
 </li>';
     }
     wp_reset_query();
+}
+
+function last_update(){
+    global $wpdb;
+    date_default_timezone_set('Etc/GMT-8');
+    $last =$wpdb->get_results("SELECT MAX(post_modified) AS MAX_m FROM $wpdb->posts WHERE (post_type = 'post' OR post_type = 'page') AND (post_status = 'publish' OR post_status = 'private')");
+    $last =strtotime($last[0]->MAX_m);
+    $now = time();
+    $time = ceil(($now-$last));
+    if($time<60)
+    {
+        echo $time.'秒前';
+    }elseif ($time<3600&&$time>=60){
+        echo (ceil($time/60)).'分钟前';
+    }elseif ($time<86400&&$time>=3600){
+        echo (ceil($time/3600)).'小时前';
+    }elseif ($time>=86400){
+        echo (ceil($time/86400)).'天前';
+    }
 }

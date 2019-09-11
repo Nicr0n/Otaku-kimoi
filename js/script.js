@@ -67,7 +67,7 @@ $('.rpt3').on('click',function () {
 });
 
 //激活live2d组件
-loadlive2d("live2d", "http://localhost/wordpress/wp-content/themes/Otaku-Kimoi/model/katou_01/katou_01.model.json");
+loadlive2d("live2d", window.location.href+"/wp-content/themes/Otaku-kimoi/model/katou_01/katou_01.model.json");
 
 
 
