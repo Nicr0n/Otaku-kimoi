@@ -28,10 +28,34 @@
             <div class="recent-comments right-push-switch fade">
                 <h2>最新评论</h2>
             </div>
-            <div class="blog-info right-contain">
-                <span>文章总数：<?php $count_posts = wp_count_posts();
-                    echo $published_posts = $count_posts->publish; ?>
+            <div class="blog-info-layout right-contain">
+                <span>
+                    博客信息
                 </span>
+                <ul>
+                    <li class="blog-info-first">
+                        <span>
+                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                            文章总数：<?php $count_posts = wp_count_posts();
+                            echo $published_posts = $count_posts->publish; ?>
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="fa fa-refresh" aria-hidden="true"></i>
+                            网站运行：<?php echo floor((time()-strtotime("2019-6-27"))/86400); ?>天
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <i class="fa fa-upload" aria-hidden="true"></i>最后更新：<?php
+                            $last = $wpdb->get_results("SELECT MAX(post_modified) AS MAX_m FROM $wpdb->posts WHERE (post_type = 'post' OR post_type = 'page') AND (post_status = 'publish' OR post_status = 'private')");
+                            $last = date('Y年n月j日', strtotime($last[0]->MAX_m));
+                            echo $last;
+                            ?>
+                        </span>
+                    </li>
+                </ul>
             </div>
             <div class="tags right-contain">
                 <span class="right-title">博客标签</span>
