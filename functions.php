@@ -87,3 +87,17 @@ function last_update(){
         echo (ceil($time/86400)).'天前';
     }
 }
+
+//彩色标签云
+function colorCloud($text) {
+    $text = preg_replace_callback('|<a (.+?)>|i','colorCloudCallback', $text);
+    return $text;
+}
+function colorCloudCallback($matches) {
+    $text = $matches[1];
+    $pattern = '/class="/';
+    $text = preg_replace($pattern, "class=\"tag-cloud ", $text);
+    return "<a $text>";
+}
+add_filter('wp_tag_cloud', 'colorCloud', 1);
+?>

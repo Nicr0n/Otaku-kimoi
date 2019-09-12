@@ -61,8 +61,10 @@
                 </ul>
             </div>
             <div class="tags right-contain">
-                <span class="right-title">标签云</span>
-                <?php show_lable(); ?>
+                <span class="tag-cloud-title">标签云</span>
+                <ul>
+                <?php wp_tag_cloud('smallest=14&largest=18&unit=px&number=0&orderby=count&order=DESC');?>
+                </ul>
             </div>
         </nav>
     </aside>
