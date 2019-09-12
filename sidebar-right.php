@@ -29,7 +29,7 @@
                 <h2 class="right-push-title">最新评论</h2>
             </div>
             <div class="blog-info-layout right-contain">
-                <span>
+                <span class="blog-info-title">
                     博客信息
                 </span>
                 <ul>
