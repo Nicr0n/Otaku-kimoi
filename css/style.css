@@ -349,8 +349,8 @@ i{
 }
 
 .right-avatar{
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     display: inline-block;
 }
@@ -388,7 +388,7 @@ i{
 }
 
 .recent-push-li{
-    margin: 5px 0px 5px 10px;
+    margin: 5px 0px 15px 10px;
 }
 
 .recent-push{
@@ -397,13 +397,14 @@ i{
     font-size: 14px;
     position: absolute;
     color: black;
-    padding: 5px 5px 0px 8px;
+    padding: 0px 3px 0px 5px;
 }
 
 .recent-push-time{
     padding: 5px 5px 0px 8px;
-    font-size: 13px;
+    font-size: 10px;
     color: black;
+    margin-bottom: 10px;
 }
 
 .blog-info-title{
