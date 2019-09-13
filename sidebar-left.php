@@ -3,7 +3,7 @@
         <div class="person-info">
             <div class="left-avatar">
                 <a href="">
-                    <?php echo('<img src='.get_wp_user_avatar_src(1)); ?> width="130" height="130" alt="Nicron" class="avatar avatar-130 wp-user-avatar wp-user-avatar-130 alignnone photo left-avatar">
+                    <?php echo get_avatar('845182672@qq.com',130,array('class'=>array('left-avatar'))); ?>
                 </a>
             </div>
             <span class="">Hi,I'm Nicron</span>

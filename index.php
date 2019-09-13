@@ -95,7 +95,7 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <?php get_sidebar('right'); ?>
+           <?php get_sidebar('right'); ?>
         </div>
     </div>
     <?php get_footer(); ?>
