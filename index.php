@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="all_layout">
+<div class="all_layout side-fix">
     <!--顶部栏 top-bar-->
     <div class="bar-top">
         <a href=" <?php bloginfo('url'); ?>" class="logo">

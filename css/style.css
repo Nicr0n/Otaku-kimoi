@@ -7,6 +7,10 @@ Version: 0.1
 Tags: Comic , Otaku
 */
 
+html{
+    height: 100%;
+}
+
 body {
     margin: 0px;
     font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
@@ -43,8 +47,19 @@ i{
     position: absolute;
     width: 100%;
     height: auto;
-    min-height: 100%;
     padding-top: 50px;
+}
+
+.side-fix:before{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    width: inherit;
+    background-color: #f0f3f4;
+    border: inherit;
+    content: "";
 }
 
 /*背景图片*/
@@ -388,16 +403,24 @@ i{
 }
 
 .recent-push-li{
-    margin: 5px 0px 15px 10px;
+    padding: 5px 5px 15px 10px;
+}
+
+.recent-push-float{
+    float: left;
+    width: 40px;
+}
+
+.clear{
+    overflow: hidden;
 }
 
 .recent-push{
-    height: 50px;
-    width: 155px;
-    font-size: 14px;
-    position: absolute;
+    font-size: 13px;
     color: black;
-    padding: 0px 3px 0px 5px;
+    padding: 0px 13px 0px 10px;
+    word-break: break-all;
+    margin: 0px;
 }
 
 .recent-push-time{

@@ -1,4 +1,4 @@
-<div class="sidebar-right-contain sidebar">
+<div class="sidebar-right-contain sidebar bg-auto">
     <aside class="sidebar-right">
         <nav class="nav-right-contianer">
             <div class="right-push  ">

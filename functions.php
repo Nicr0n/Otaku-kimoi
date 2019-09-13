@@ -63,8 +63,9 @@ function recent_push(){
     $recent_posts = wp_get_recent_posts($args);
     foreach( $recent_posts as $recent ){
         echo '<li class="recent-push-li">
-<a href="' . get_permalink($recent["ID"]) . '">' .'<img src='.get_wp_user_avatar_src($recent["post_author"]).' class="right-avatar">'.'<span class="recent-push">'.$recent["post_title"].'</span>'.'<span class="recent-push-time"><i class="fa fa-calendar-o" aria-hidden="true"></i>'.date("Y.m.d",strtotime($recent["post_modified"])).'</span>'.'</a>
-</li>';
+<a class="recent-push-float" href="' .get_permalink($recent["ID"]) . '">'.'<img src='.get_wp_user_avatar_src($recent["post_author"]).' class="right-avatar">'.'</a>'.'
+<div class="clear"><h4 class="recent-push"><a href="'.get_permalink($recent["ID"]).'">'.$recent["post_title"].'</a></h4>'.'<small class="recent-push-time"><i class="fa fa-calendar-o" aria-hidden="true"></i>'.date("Y.m.d",strtotime($recent["post_modified"])).'</small>'.'
+</div></li>';
     }
     wp_reset_query();
 }
