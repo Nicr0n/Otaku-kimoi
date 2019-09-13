@@ -7,7 +7,7 @@ Version: 0.1
 Tags: Comic , Otaku
 */
 
-html{
+html {
     height: 100%;
 }
 
@@ -35,11 +35,15 @@ h2 {
 
 a {
     text-decoration: none;
-    color:#333;
+    color: #333;
 }
 
-i{
+i {
     padding-right: 2px;
+}
+
+th {
+    font-weight: unset;
 }
 
 /*整体布局*/
@@ -50,7 +54,7 @@ i{
     padding-top: 50px;
 }
 
-.side-fix:before{
+.side-fix:before {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -288,11 +292,11 @@ i{
     overflow: scroll;
 }
 
-.sidebar-left-contain::-webkit-scrollbar{
+.sidebar-left-contain::-webkit-scrollbar {
     display: none;
 }
 
-.homepage{
+.homepage {
     margin-top: 10px;
 }
 
@@ -363,7 +367,7 @@ i{
     border-radius: 50%;
 }
 
-.right-avatar{
+.right-avatar {
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -378,7 +382,7 @@ i{
 }
 
 /*live2d模型*/
-.waifu{
+.waifu {
     position: fixed;
     bottom: 0;
     background-color: #23282d;
@@ -392,85 +396,86 @@ i{
     border-left-style: solid;
     border-left-width: 1px;
     border-left-color: rgb(54, 44, 124);
-    background-color: whitesmoke;
-    opacity: 0.8;
+    background-color: rgba(245, 245, 245, 0.8);
     backdrop-filter: blur(20px);
     display: table-cell;
     height: 100%;
 }
 
-.right-contain{
+.right-contain {
+    padding: 15px 14px 14px 14px;
 }
 
-.recent-push-li{
-    padding: 5px 5px 15px 10px;
+.recent-push-li {
+    padding: 5px 5px 15px 5px;
 }
 
-.recent-push-float{
+.recent-push-float {
     float: left;
     width: 40px;
 }
 
-.clear{
+.clear {
     overflow: hidden;
 }
 
-.recent-push{
-    font-size: 13px;
+.right-switch {
+    padding: 0px 14px 0px 14px;
+}
+
+.recent-push {
+    font-size: 14px;
     color: black;
-    padding: 0px 13px 0px 10px;
+    padding: 0px 8px 5px 10px;
     word-break: break-all;
     margin: 0px;
 }
 
-.recent-push-time{
+.recent-push-time {
     padding: 5px 5px 0px 8px;
     font-size: 10px;
     color: black;
     margin-bottom: 10px;
 }
 
-.blog-info-title{
+.right-title {
     margin: 10px 14px 10px 0px;
-    font-weight: bold;
-    font-size: 21px;
+    font-size: 17px;
+    font-weight: normal;
     display: block;
 }
 
-.blog-info-layout{
-    padding: 0px 14px 8px 14px;
-}
 
-.blog-info-content{
+.blog-info-content {
     float: right;
 }
 
-.blog-info{
+.blog-info {
     font-size: 14px;
 }
 
-.blog-info-first{
+.blog-info-first {
     margin-top: 10px;
     padding: 10px;
-    border:rgba(96,96,96,0.4);
+    border: rgba(96, 96, 96, 0.4);
     border-style: solid;
     border-width: 1px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
-.blog-info-medium{
+.blog-info-medium {
     padding: 10px;
-    border:rgba(96,96,96,0.4);
+    border: rgba(96, 96, 96, 0.4);
     border-style: solid;
-    border-top-style:none;
-    border-bottom-style:none;
+    border-top-style: none;
+    border-bottom-style: none;
     border-width: 1px;
 }
 
-.blog-info-bottom{
+.blog-info-bottom {
     padding: 10px;
-    border:rgba(96,96,96,0.4);
+    border: rgba(96, 96, 96, 0.4);
     border-style: solid;
     border-width: 1px;
     border-bottom-left-radius: 5px;
@@ -478,44 +483,44 @@ i{
 
 }
 
-.right-push{
+.right-push {
     display: block;
     border-style: solid;
     border-width: 0px 0px 1px 0px;
-    border-color: rgba(96,96,96,0.4);
+    border-color: rgba(96, 96, 96, 0.4);
 }
 
-.right-push-title{
+.right-push-title {
     margin: 10px 14px 10px 9px;
 }
 
-.right-push-tabs{
+.right-push-tabs {
     display: inline-block;
     font-size: 25px;
-    padding-left: calc((215px - 80px)/6);
-    padding-right: calc((215px - 80px)/6);
+    padding-left: calc((215px - 80px) / 6);
+    padding-right: calc((215px - 80px) / 6);
     border-style: solid;
     border-width: 0px;
     border-color: black;
     cursor: pointer;
 }
 
-.right-push-switch{
+.right-push-switch {
     display: none;
 }
 
-.fade{
+.fade {
     opacity: 0;
     transition: opacity;
     transition-duration: 0.5s;
 }
 
-.fadein{
+.fadein {
     opacity: 1;
 }
 
-.tag-cloud-title{
-    border-top: rgba(96,96,96,0.4);
+.tag-cloud-title {
+    border-top: rgba(96, 96, 96, 0.4);
     border-top-style: solid;
     border-width: 1px;
     margin: 10px 14px 10px 3px;
@@ -524,21 +529,58 @@ i{
     display: block;
 }
 
-.tags{
-    padding: 0px 10px 10px 10px;
-}
-
-.tag-cloud{
+.tag-cloud {
     /*迷迭香色*/
     background: #A3ADE3;
-    z-index: 99;
-    padding: 3px;
-    margin: 4px;
+    padding: 4px;
+    margin: 0px 4px 6px 0px;
     border-radius: 7%;
-    border-style: solid;
-    border:0px;
+    display: inline-block;
 }
 
+#wp-calendar {
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+}
+
+.widget{
+    padding-top: 13px
+}
+
+#wp-calendar > tbody > tr > td > a {
+    color: blue;
+}
+
+.pad {
+    visibility: hidden;
+}
+
+#wp-calendar > tbody > tr > td {
+    border-radius: 50%;
+    text-align: center;
+    line-height: 15px;
+    font-size: 15px;
+    background: whitesmoke;
+    padding: 5px;
+}
+
+#prev > a {
+    margin-left: 5px;
+    padding: 3px;
+    border-radius: 7%;
+    background: #5DAC81;
+}
+
+#next {
+    text-align: right;
+}
+
+#next > a {
+    margin-right: 5px;
+    padding: 3px;
+    border-radius: 10%;
+    background: #5DAC81;
+}
 
 /*网页主体容器*/
 .main-container {
@@ -554,12 +596,12 @@ i{
     display: table-cell;
 }
 
-.main-title{
+.main-title {
     padding-top: 30px;
     width: 100%;
 }
 
-.main-span{
+.main-span {
     font-size: 50px;
     font-family: Caflisch Script;
     color: white;
@@ -567,7 +609,7 @@ i{
     display: block;
 }
 
-.moto-span{
+.moto-span {
     font-size: 23px;
     color: white;
     text-align: center;
@@ -577,7 +619,7 @@ i{
     padding: 5px;
 }
 
-.small-span{
+.small-span {
     font-size: 19px;
     color: white;
     text-align: center;
@@ -608,16 +650,16 @@ i{
     border: 0.5px;
     border-style: groove;
     border-color: black;
-    background: rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.6);
     color: black;
 }
 
-.article-title{
+.article-title {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.article-info{
+.article-info {
     padding: 8px;
     border-top: black;
     border-top-style: solid;
@@ -627,30 +669,30 @@ i{
     opacity: 0;
 }
 
-.article-date{
+.article-date {
     float: left;
 }
 
-.article-viewer{
+.article-viewer {
     float: right;
 }
 
-.article-comments{
+.article-comments {
     float: right;
     margin-right: 10px;
 }
 
-.bubble:hover .bubble-contain{
+.bubble:hover .bubble-contain {
     backdrop-filter: blur(8px);
     transition-duration: 0.3s;
 }
 
-.bubble:hover h2{
+.bubble:hover h2 {
     transform: translateY(-30px);
     transition-duration: 0.4s;
 }
 
-.bubble:hover .article-info{
+.bubble:hover .article-info {
     opacity: 1;
     transform: translateY(10px);
     transition-duration: 0.4s;

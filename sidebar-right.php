@@ -14,8 +14,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="recent-articles fade fadein">
-                <h2 class="right-push-title">最新文章</h2>
+            <div class="recent-articles fade fadein right-switch">
+                <span class="right-title">最新文章</span>
                 <ul>
                     <?php
                     recent_push()
@@ -23,12 +23,12 @@
                 </ul>
             </div>
             <div class="hot-articles right-push-switch fade">
-                <h2 class="right-push-title">热门文章</h2>
+                <span class="right-title right-switch">热门文章</span>
             </div>
             <div class="recent-comments right-push-switch fade">
-                <h2 class="right-push-title">最新评论</h2>
+                <span class="right-title right-switch">最新评论</span>
             </div>
-            <div class="blog-info-layout right-contain">
+            <div class="right-contain">
                 <span class="blog-info-title">
                     博客信息
                 </span>
@@ -37,14 +37,15 @@
                         <span>
                             <i class="fa fa-file-text" aria-hidden="true"></i>
                             文章总数<span class="blog-info-content"><?php $count_posts = wp_count_posts();
-                            echo $published_posts = $count_posts->publish.'篇'; ?>
+                                echo $published_posts = $count_posts->publish . '篇'; ?>
                                 <span>
                         </span>
                     </li>
                     <li class="blog-info-medium blog-info">
                         <span>
                             <i class="fa fa-refresh" aria-hidden="true"></i>
-                            网站运行<span class="blog-info-content"><?php echo floor((time()-strtotime("2019-6-27"))/86400); ?>天
+                            网站运行<span
+                                    class="blog-info-content"><?php echo floor((time() - strtotime("2019-6-27")) / 86400); ?>天
                             </span>
                         </span>
                     </li>
@@ -60,11 +61,15 @@
                     </li>
                 </ul>
             </div>
-            <div class="tags right-contain">
-                <span class="tag-cloud-title">标签云</span>
+            <div class="right-contain">
+                <span class="right-title">标签云</span>
                 <ul>
-                <?php wp_tag_cloud('smallest=14&largest=18&unit=px&number=0&orderby=count&order=DESC');?>
+                    <?php wp_tag_cloud('smallest=14&largest=18&unit=px&number=0&orderby=count&order=DESC'); ?>
                 </ul>
+            </div>
+            <div class="calender">
+                <span class="right-contain">文章归档</span>
+                <?php the_widget('WP_Widget_Calendar'); ?>
             </div>
         </nav>
     </aside>
