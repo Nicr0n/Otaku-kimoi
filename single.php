@@ -1,5 +1,14 @@
-<?php get_header(); ?>
-<div class="all_layout side-fix">
+<?php
+/**
+ * The template for displaying all single posts and attachments
+ *
+ * @package WordPress
+ * @subpackage Twenty_Fifteen
+ * @since Twenty Fifteen 1.0
+ */
+
+get_header(); ?>
+    <div class="all_layout side-fix">
     <!--顶部栏 top-bar-->
     <div class="bar-top">
         <a href=" <?php bloginfo('url'); ?>" class="logo">
@@ -69,35 +78,32 @@
     <div class="content">
         <div class="main-container">
             <div class="center-part">
-                <div class="main-title">
-                    <span class="main-span">Nicron</span>
-                    <span class="moto-span">情难消受美人恩 白雪化蝶舞红尘</span>
-                    <span class="small-span">My Kaleidoscope</span>
-                </div>
                 <div class="blog-post-layout">
                     <!--文章输出区域-->
                     <?php if (have_posts()) : ?>
                         <?php while (have_posts()) :
                             the_post(); ?>
-                            <a href="<?php the_permalink(); ?>">
-                                <div class="bubble">
-                                    <div class="bubble-contain">
-                                        <div class="bubble-article">
-                                            <h2 class="article-title"><?php the_title(); ?></h2>
-                                            <div class="article-info">
-                                                <span class="article-date"><i class="fa fa-calendar-o"
-                                                                              aria-hidden="true"></i><?php the_time('y-m-d'); ?></span>
-                                                <span class="article-viewer"><i class="fa fa-eye"
-                                                                                aria-hidden="true"></i><?php if (function_exists('the_views')) {
-                                                        the_views();
-                                                    } ?></span>
-                                                <span class="article-comments"><i class="fa fa-commenting-o"
-                                                                                  aria-hidden="true"></i><?php echo(get_comments_number() . "条评论"); ?></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
+                            <div class="main-title">
+                                <span class="main-span"><?php the_title(); ?></span>
+                            </div>
+                            <?php
+                            the_content();
+
+                            // If comments are open or we have at least one comment, load up the comment template.
+                            if ( comments_open() || get_comments_number() ) :
+                                comments_template();
+                            endif;
+
+                            // Previous/next post navigation.
+                            the_post_navigation( array(
+                                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentyfifteen' ) . '</span> ' .
+                                    '<span class="screen-reader-text">' . __( 'Next post:', 'twentyfifteen' ) . '</span> ' .
+                                    '<span class="post-title">%title</span>',
+                                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentyfifteen' ) . '</span> ' .
+                                    '<span class="screen-reader-text">' . __( 'Previous post:', 'twentyfifteen' ) . '</span> ' .
+                                    '<span class="post-title">%title</span>',
+                            ) );
+                            ?>
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
@@ -105,5 +111,4 @@
             <?php get_sidebar('right'); ?>
         </div>
     </div>
-    <?php get_footer(); ?>
-</div>
+<?php get_footer(); ?>

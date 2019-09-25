@@ -367,7 +367,7 @@ th {
     border-radius: 50%;
 }
 
-.left-avatar > a > img{
+.left-avatar > a > img {
     padding-top: 10px;
     border-radius: 50%;
 }
@@ -420,7 +420,7 @@ th {
     width: 40px;
 }
 
-.switch-push-float > img{
+.switch-push-float > img {
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -443,7 +443,7 @@ th {
     margin: 0px;
 }
 
-.switch-push-li{
+.switch-push-li {
     margin-bottom: 12px;
 }
 
@@ -568,7 +568,7 @@ th {
     border-spacing: 5px 5px;
 }
 
-.widget{
+.widget {
     padding-top: 13px
 }
 

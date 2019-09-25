@@ -59,12 +59,12 @@
                     $comments = get_comments('status=approve&number=5&order=desc');
                     foreach ($comments as $comment) :
                         $avatar = "";
-                    if (has_wp_user_avatar(get_comment($comment->comment_ID)->user_id)){
-                        $avatar = get_wp_user_avatar_src(get_comment($comment->comment_ID)->user_id);
-                    }else{
-                        $avatar = get_wp_user_avatar_src('default');
-                    }
-                        $output = '<li class="switch-push-li"><a class="switch-push-float" href="'.esc_url(get_comment_link($comment->comment_ID)). '">'.get_avatar(get_comment($comment->comment_ID)->user_id,40).'</a>
+                        if (has_wp_user_avatar(get_comment($comment->comment_ID)->user_id)) {
+                            $avatar = get_wp_user_avatar_src(get_comment($comment->comment_ID)->user_id);
+                        } else {
+                            $avatar = get_wp_user_avatar_src('default');
+                        }
+                        $output = '<li class="switch-push-li"><a class="switch-push-float" href="' . esc_url(get_comment_link($comment->comment_ID)) . '">' . get_avatar(get_comment($comment->comment_ID)->user_id, 40) . '</a>
 <div class="clear">
 <h4 class="switch-push"><a href="' . esc_url(get_comment_link($comment->comment_ID)) . '">' . $comment->comment_author . '</a></h4>
 </div>
@@ -99,7 +99,7 @@
                         <span>
                             <i class="fa fa-comment" aria-hidden="true"></i>
                             评论总数<span
-                                    class="blog-info-content"><?php echo $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->comments");?> 条
+                                    class="blog-info-content"><?php echo $wpdb->get_var("SELECT COUNT(*) FROM $wpdb->comments"); ?> 条
                             </span>
                         </span>
                     </li>

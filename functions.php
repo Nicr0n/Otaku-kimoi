@@ -78,39 +78,21 @@ function recent_comments_push()
 
 }
 
-    function last_update()
-    {
-        global $wpdb;
-        date_default_timezone_set('Etc/GMT-8');
-        $last = $wpdb->get_results("SELECT MAX(post_modified) AS MAX_m FROM $wpdb->posts WHERE (post_type = 'post' OR post_type = 'page') AND (post_status = 'publish' OR post_status = 'private')");
-        $last = strtotime($last[0]->MAX_m);
-        $now = time();
-        $time = ceil(($now - $last));
-        if ($time < 60) {
-            echo $time . '秒前';
-        } elseif ($time < 3600 && $time >= 60) {
-            echo (ceil($time / 60)) . '分钟前';
-        } elseif ($time < 86400 && $time >= 3600) {
-            echo (ceil($time / 3600)) . '小时前';
-        } elseif ($time >= 86400) {
-            echo (ceil($time / 86400)) . '天前';
-        }
+function last_update()
+{
+    global $wpdb;
+    date_default_timezone_set('Etc/GMT-8');
+    $last = $wpdb->get_results("SELECT MAX(post_modified) AS MAX_m FROM $wpdb->posts WHERE (post_type = 'post' OR post_type = 'page') AND (post_status = 'publish' OR post_status = 'private')");
+    $last = strtotime($last[0]->MAX_m);
+    $now = time();
+    $time = ceil(($now - $last));
+    if ($time < 60) {
+        echo $time . '秒前';
+    } elseif ($time < 3600 && $time >= 60) {
+        echo (ceil($time / 60)) . '分钟前';
+    } elseif ($time < 86400 && $time >= 3600) {
+        echo (ceil($time / 3600)) . '小时前';
+    } elseif ($time >= 86400) {
+        echo (ceil($time / 86400)) . '天前';
     }
-
-//彩色标签云
-    function colorCloud($text)
-    {
-        $text = preg_replace_callback('|<a (.+?)>|i', 'colorCloudCallback', $text);
-        return $text;
-    }
-
-    function colorCloudCallback($matches)
-    {
-        $text = $matches[1];
-        $pattern = '/class="/';
-        $text = preg_replace($pattern, "class=\"tag-cloud ", $text);
-        return "<a $text>";
-    }
-
-    add_filter('wp_tag_cloud', 'colorCloud', 1);
-    ?>
+}
