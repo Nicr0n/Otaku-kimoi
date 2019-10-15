@@ -96,3 +96,91 @@ function last_update()
         echo (ceil($time / 86400)) . '天前';
     }
 }
+
+//彩色标签云
+function colorCloud($text)
+{
+    $text = preg_replace_callback('|<a (.+?)>|i', 'colorCloudCallback', $text);
+    return $text;
+}
+
+function colorCloudCallback($matches)
+{
+    $text = $matches[1];
+    $pattern = '/class="/';
+    $text = preg_replace($pattern, "class=\"tag-cloud ", $text);
+    return "<a $text>";
+}
+
+/**
+
+ * 获取文章的评论人数
+ *$postid:文章id
+ *$which:返回类型（0或1）为0时返回评论人数，为1时返回评论条数
+ */
+function count_comments($postid=0,$which=0) {
+    $comments = get_comments('status=approve&type=comment&post_id='.$postid); //获取文章的所有评论
+    if ($comments) {
+        $i=0; $j=0; $commentusers=array();
+        foreach ($comments as $comment) {
+            ++$i;
+            if ($i==1) { $commentusers[] = $comment->comment_author_email; ++$j; }
+            if ( !in_array($comment->comment_author_email, $commentusers) ) {
+                $commentusers[] = $comment->comment_author_email;
+                ++$j;
+            }
+        }
+        $output = array($j,$i);
+        $which = ($which == 0) ? 0 : 1;
+        return $output[$which]; //返回评论人数
+    }
+    return 0; //没有评论返回0
+}
+
+
+//add post thumbnails
+if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
+}
+
+if ( function_exists( 'add_image_size' ) ) {
+    add_image_size( 'customized-post-thumb', 100, 120 );
+}
+
+add_filter('wp_tag_cloud', 'colorCloud', 1);
+
+?>
+
+<?php
+//自定义评论列表模板
+function simple_comment($comment, $args, $depth) {
+$GLOBALS['comment'] = $comment; ?>
+<li class="comment" id="li-comment-<?php comment_ID(); ?>">
+    <div class="media">
+        <div class="media-left">
+            <?php if (function_exists('get_avatar') && get_option('show_avatars')) { echo get_avatar($comment, 48); } ?>
+        </div>
+        <div class="media-body">
+            <?php printf(__('<p class="author_name">%s</p>'), get_comment_author_link()); ?>
+            <?php if ($comment->comment_approved == '0') : ?>
+                <em>评论等待审核...</em><br />
+            <?php endif; ?>
+            <?php comment_text(); ?>
+        </div>
+    </div>
+    <div class="comment-metadata">
+   			<span class="comment-pub-time">
+   				<?php echo get_comment_time('Y-m-d H:i'); ?>
+   			</span>
+        <span class="comment-btn-reply">
+ 				<i class="fa fa-reply"></i> <?php comment_reply_link(array_merge( $args, array('reply_text' => '回复','depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+   			</span>
+    </div>
+
+    <?php
+    }
+    ?>
+
+
+
+
