@@ -59,14 +59,10 @@
                     $comments = get_comments('status=approve&number=5&order=desc');
                     foreach ($comments as $comment) :
                         $avatar = "";
-                        if (has_wp_user_avatar(get_comment($comment->comment_ID)->user_id)) {
-                            $avatar = get_wp_user_avatar_src(get_comment($comment->comment_ID)->user_id);
-                        } else {
-                            $avatar = get_wp_user_avatar_src('default');
-                        }
-                        $output = '<li class="switch-push-li"><a class="switch-push-float" href="' . esc_url(get_comment_link($comment->comment_ID)) . '">' . get_avatar(get_comment($comment->comment_ID)->user_id, 40) . '</a>
+                        $output = '<li class="switch-push-li"><a class="switch-push-float" href="' . esc_url(get_comment_link($comment->comment_ID)) . '">' . get_avatar($comment->comment_author_email, 40) . '</a>
 <div class="clear">
 <h4 class="switch-push"><a href="' . esc_url(get_comment_link($comment->comment_ID)) . '">' . $comment->comment_author . '</a></h4>
+<small class="switch-push-comment-content">'.mb_strimwidth($comment->comment_content,0,47,"...").'</small>
 </div>
 </li>';
                         echo $output;

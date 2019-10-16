@@ -39,7 +39,7 @@
                     <span>分享</span>
                 </li>
                 <li class="contact">
-                    <a href="#">
+                    <a href="">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                         <span>联系我</span>
                     </a>
