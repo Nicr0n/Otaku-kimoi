@@ -18,8 +18,7 @@ function show_nav()
 ' . $category->name . '
 </span>' . '<ul class="drop-down-content">
 '//打印所有分类下文章
-                . get_articles($category->term_id);
-            $output .= '
+                . get_articles($category->term_id) . '
 </ul>' . '
 </li>';
             echo $output;
@@ -188,6 +187,13 @@ function par_pagenavi($range = 3)
         }
         next_posts_link(' »');
     }
+}
+
+//mb_strimwidth lowb替代
+function ts_strimwidth($str, $start, $width, $trimmarker)
+{
+    $output = preg_replace('/^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$start.'}((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$width.'}).*/s','\1',$str);
+    return $output.$trimmarker;
 }
 
 
