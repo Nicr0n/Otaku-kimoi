@@ -33,15 +33,17 @@ function show_nav()
 function get_articles($category)
 {
     global $wpdb;
-    $requset = "SELECT $wpdb->term_relationships.term_taxonomy_id,object_id,$wpdb->posts.post_title,guid FROM $wpdb->term_relationships ";
+    $requset = "SELECT $wpdb->term_relationships.term_taxonomy_id,object_id,$wpdb->posts.post_title,post_status,guid FROM $wpdb->term_relationships ";
     $requset .= "LEFT JOIN $wpdb->posts ON $wpdb->posts.ID=$wpdb->term_relationships.object_id ";
     $requset .= "WHERE term_taxonomy_id='$category'";
     $articles = $wpdb->get_results($requset);
     $output = "";
     foreach ($articles as $article) {
-        $output .= '<li class="sec-nav">
+        if ($article->post_status != 'trash') {
+            $output .= '<li class="sec-nav">
 <a class="nav" href="' . $article->guid . '">' . $article->post_title . '</a>
 </li>';
+        }
     }
     return $output;
 }
@@ -192,8 +194,8 @@ function par_pagenavi($range = 3)
 //mb_strimwidth lowb替代
 function ts_strimwidth($str, $start, $width, $trimmarker)
 {
-    $output = preg_replace('/^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$start.'}((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,'.$width.'}).*/s','\1',$str);
-    return $output.$trimmarker;
+    $output = preg_replace('/^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,' . $start . '}((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,' . $width . '}).*/s', '\1', $str);
+    return $output . $trimmarker;
 }
 
 
