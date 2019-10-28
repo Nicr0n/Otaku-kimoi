@@ -80,7 +80,7 @@ function getRootPath(){
 }
 
 //激活live2d组件
-loadlive2d("live2d", getRootPath()+"/wp-content/themes/Otaku-kimoi/model/katou_01/katou_01.model.json");
+loadlive2d("live2d", "https://"+document.domain+"/wp-content/themes/Otaku-kimoi/model/katou_01/katou_01.model.json");
 
 
 

@@ -54,7 +54,7 @@
             </div>
             <div class="recent-comments right-push-switch fade right-switch">
                 <span class="right-title">最新评论</span>
-                <ul>
+                <ul
                     <?php
                     $comments = get_comments('status=approve&number=5&order=desc');
                     foreach ($comments as $comment) :
@@ -87,7 +87,7 @@
                         <span>
                             <i class="fa fa-refresh" aria-hidden="true"></i>
                             网站运行<span
-                                    class="blog-info-content"><?php echo floor((time() - strtotime("2019-6-27")) / 86400); ?>天
+                                    class="blog-info-content"><?php echo floor((time() - strtotime("2019-10-17")) / 86400); ?>天
                             </span>
                         </span>
                     </li>

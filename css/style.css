@@ -626,6 +626,7 @@ th {
     height: 100%;
     width: 100%;
     display: table;
+    table-layout: fixed;
 }
 
 .center-part {
@@ -835,6 +836,32 @@ th {
 .single-content-article {
     padding: 30px;
 }
+
+.single-content-article >p >img{
+    max-width: calc(100% - 3px);
+}
+
+.single-content-article >p >a{
+    max-width: calc(100% - 3px);
+}
+
+.single-content-article >p >a >img{
+    max-width: calc(100% - 3px);
+}
+
+.single-content-article >ul{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.single-content-article > ul,.single-content-article > ul >li{
+    list-style-type: disc;
+}
+
+
 
 .single-content-article > h1, .single-content-article > h2, .single-content-article > h3, .single-content-article > h4, .single-content-article > h5 {
     padding-bottom: 0.3%;

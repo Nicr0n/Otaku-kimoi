@@ -6,8 +6,9 @@
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css" type="text/css"/>
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link crossorigin="anonymous" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" href="https://lib.baomitu.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/model/">
+    <?php wp_head(); ?>
 </head>
 <title>Nicron's bolg</title>
 <body>
@@ -28,7 +29,7 @@
         </div>
         <div class="bar-top_right">
             <ul>
-                <li class="user">
+                <li class="user ">
                     <a class="nav-login no-slide-up" href="javascript:;">
                         <i class="fa fa-user" aria-hidden="true"></i>
                         <span>登陆</span>
