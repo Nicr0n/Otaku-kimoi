@@ -1,8 +1,8 @@
-<div class="sidebar-right-contain sidebar bg-auto">
+<div class="sidebar-right-contain align-self-stretch bg-auto">
     <aside class="sidebar-right">
         <nav class="nav-right-contianer">
-            <div class="right-push  ">
-                <ul>
+            <div class="right-push">
+                <ul class="right-push-tab nav-tabs">
                     <li class="right-push-tabs rpt1">
                         <i class="fa fa-rss" aria-hidden="true"></i>
                     </li>
@@ -14,7 +14,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="recent-articles fade fadein right-switch">
+            <div class="recent-articles rightfade rightfadein right-switch">
                 <span class="right-title">最新文章</span>
                 <ul>
                     <?php
@@ -22,7 +22,7 @@
                     ?>
                 </ul>
             </div>
-            <div class="hot-articles right-push-switch fade right-switch">
+            <div class="hot-articles right-push-switch rightfade right-switch">
                 <span class="right-title">热门文章</span>
                 <ul>
                     <?php
@@ -45,16 +45,16 @@
                                 </h4>
                                 <small class="switch-push-time">
                                     <i class="fa fa-commenting-o" aria-hidden="true"></i>
-                                    <?php echo get_comments_number(get_the_ID()); ?>
+                                    <?php echo get_comments_number(get_the_ID()),'条评论'; ?>
                                 </small>
                             </div>
                         </li>
                     <?php endwhile; ?>
                 </ul>
             </div>
-            <div class="recent-comments right-push-switch fade right-switch">
+            <div class="recent-comments right-push-switch rightfade right-switch">
                 <span class="right-title">最新评论</span>
-                <ul
+                <ul>
                     <?php
                     $comments = get_comments('status=approve&number=5&order=desc');
                     foreach ($comments as $comment) :

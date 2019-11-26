@@ -1,4 +1,4 @@
-var typeNumber = 4;
+var typeNumber = 6;
 var errorCorrectionLevel = 'L';
 var qr = qrcode(typeNumber, errorCorrectionLevel);
 var url = window.location.href;
@@ -40,30 +40,30 @@ $('.drop-down>span').on('click',function () {
 //设置右侧推送切换事件
 $('.rpt1').on('click',function () {
     $('.recent-comments').fadeOut(0);
-    $('.recent-comments').removeClass('fadein');
+    $('.recent-comments').removeClass('rightfadein');
     $('.hot-articles').fadeOut(0);
-    $('.hot-articles').removeClass('fadein');
+    $('.hot-articles').removeClass('rightfadein');
     $('.recent-articles').fadeIn(0);
-    $('.recent-articles').addClass('fadein')
+    $('.recent-articles').addClass('rightfadein')
 });
 
 $('.rpt2').on('click',function () {
     $('.recent-comments').fadeOut(0);
-    $('.recent-comments').removeClass('fadein');
+    $('.recent-comments').removeClass('rightfadein');
     $('.recent-articles').fadeOut(0);
-    $('.recent-articles').removeClass('fadein');
+    $('.recent-articles').removeClass('rightfadein');
     $('.hot-articles').fadeIn(0);
-    $('.hot-articles').addClass('fadein')
+    $('.hot-articles').addClass('rightfadein')
 
 });
 
 $('.rpt3').on('click',function () {
     $('.recent-articles').fadeOut(0);
-    $('.recent-articles').removeClass('fadein');
+    $('.recent-articles').removeClass('rightfadein');
     $('.hot-articles').fadeOut(0);
-    $('.hot-articles').removeClass('fadein');
+    $('.hot-articles').removeClass('rightfadein');
     $('.recent-comments').fadeIn(0);
-    $('.recent-comments').addClass('fadein');
+    $('.recent-comments').addClass('rightfadein');
 });
 
 function getRootPath(){
@@ -78,9 +78,9 @@ function getRootPath(){
     var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
     return(localhostPaht+projectName);
 }
-
+console.log(document.domain);
 //激活live2d组件
-loadlive2d("live2d", "https://"+document.domain+"/wp-content/themes/Otaku-kimoi/model/katou_01/katou_01.model.json");
+// loadlive2d("live2d", "https://"+document.domain+"/wp-content/themes/Otaku-kimoi/model/katou_01/katou_01.model.json");
 
 
 

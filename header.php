@@ -5,49 +5,64 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <!-- Stylesheets -->
+    <link crossorigin="anonymous" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN"
+          href="https://lib.baomitu.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <link crossorigin="anonymous" integrity="sha384-JEAjzZ2SuTugMi1onOeXj5LyblbhGCa1U6TKYniTHW0Xli9SGkchIfxAB227r21a"
+          href="https://lib.baomitu.com/github-markdown-css/3.0.1/github-markdown.css" rel="stylesheet">
+    <link crossorigin="anonymous" integrity="sha384-t4IGnnWtvYimgcRMiXD2ZD04g28Is9vYsVaHo5LcWWJkoQGmMwGg+QS0mYlhbVv3"
+          href="https://lib.baomitu.com/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css" type="text/css"/>
-    <link crossorigin="anonymous" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" href="https://lib.baomitu.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
     <link href="<?php bloginfo('template_url'); ?>/model/">
     <?php wp_head(); ?>
 </head>
 <title>Nicron's bolg</title>
 <body>
-<div class="all_layout side-fix">
+<div class="container-fluid side-fix">
     <!--顶部栏 top-bar-->
-    <div class="bar-top">
-        <a href=" <?php bloginfo('url'); ?>" class="logo">
-            <img src="<?php bloginfo('template_url'); ?>/images/demo.png">
-            Nicron
-        </a>
-        <div class="search_box">
-            <form>
-                <input class="search_keywords" placeholder="search" value="" name="s">
-                <button class="search_button">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a href=" <?php bloginfo('url'); ?>" class="navbar-brand">
+                <img src="<?php bloginfo('template_url'); ?>/images/demo.png">
+                Nicron
+            </a>
+        </div>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navigation"
+                aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="search-box">
+            <form class="form-inline mr-auto collapse navbar-collapse" role="search">
+                <div class="form-group">
+                    <input type="text" class="search_box" placeholder="Search">
+                    <button class="search_button">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
             </form>
         </div>
-        <div class="bar-top_right">
-            <ul>
-                <li class="user ">
-                    <a class="nav-login no-slide-up" href="javascript:;">
+        <div class="collapse navbar-collapse bg-fix" id="navigation">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-login no-slide-up nav-link" href="javascript:;">
                         <i class="fa fa-user" aria-hidden="true"></i>
                         <span>登陆</span>
                     </a>
                 </li>
-                <li class="share">
-                    <i class="fa fa-share" aria-hidden="true"></i>
-                    <span>分享</span>
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <i class="fa fa-share" aria-hidden="true"></i>
+                        <span>分享</span>
+                    </a>
                 </li>
-                <li class="contact">
-                    <a href="">
+                <li class="nav-item">
+                    <a class="nav-link" href="">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                         <span>联系我</span>
                     </a>
                 </li>
             </ul>
         </div>
-    </div>
+    </nav>
     <!--分享QRcode-->
     <div id="share-qrcode" hidden="hide">
     </div>

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <?php get_sidebar('left'); ?>
 <div class="content">
-    <div class="main-container">
-        <div class="center-part">
+    <div class="main-container d-flex">
+        <div class="center-part align-self-stretch">
             <div class="main-title">
                 <span class="main-span">Nicron</span>
                 <span class="moto-span">情难消受美人恩 白雪化蝶舞红尘</span>
@@ -21,7 +21,7 @@
                                         <p class="article-excerpt"><?php if (has_excerpt()) {
                                                 echo $description = get_the_excerpt(); //文章编辑中的摘要
                                             } else {
-                                                echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 170, "……"); //文章编辑中若无摘要，自定截取文章内容字数做为摘要
+                                                echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 160, "……"); //文章编辑中若无摘要，自定截取文章内容字数做为摘要
                                             } ?></p>
                                         <div class="article-info">
                                                 <span class="article-date"><i class="fa fa-calendar-o"

@@ -10,7 +10,7 @@
 get_header(); ?>
 <?php get_sidebar('left'); ?>
     <div class="content">
-        <div class="main-container">
+        <div class="main-container d-flex">
             <div class="center-part">
                 <div class="single-post-layout">
                     <!--文章输出区域-->
@@ -49,7 +49,7 @@ get_header(); ?>
                                     echo "</div>";
                                 }
                                 ?>
-                                <div class="single-content-article">
+                                <div class="single-content-article markdown-body">
                                     <?php
                                     the_content();
                                     ?>
