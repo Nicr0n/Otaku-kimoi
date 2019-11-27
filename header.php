@@ -21,7 +21,7 @@
     <!--顶部栏 top-bar-->
     <nav class="navbar navbar-light navbar-expand-md fixed-top" role="navigation">
         <div class="navbar-header">
-            <a href=" <?php bloginfo('url'); ?>" class="navbar-brand">
+            <a href="<?php bloginfo('url'); ?>" class="navbar-brand">
                 <img src="<?php bloginfo('template_url'); ?>/images/demo.png">
                 Nicron
             </a>
@@ -30,20 +30,18 @@
                 aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="search-box">
-            <form class="form-inline mr-auto collapse navbar-collapse" role="search">
-                <div class="form-group">
-                    <input type="text" class="search_box" placeholder="Search">
-                    <button class="search_button">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
+        <form class="form-inline mr-auto collapse navbar-collapse" role="search">
+            <div class="form-group">
+                <input type="text" class="search_box" placeholder="Search">
+                <button class="search_button">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+        </form>
         <div class="collapse navbar-collapse bg-fix" id="navigation">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-login no-slide-up nav-link" href="javascript:;">
+                    <a class="nav-login no-slide-up nav-link" href="<?php bloginfo('url'); ?>/wp-login.php">
                         <i class="fa fa-user" aria-hidden="true"></i>
                         <span>登陆</span>
                     </a>

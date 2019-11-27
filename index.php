@@ -2,7 +2,7 @@
 <?php get_sidebar('left'); ?>
 <div class="content">
     <div class="main-container d-flex">
-        <div class="center-part align-self-stretch">
+        <div class="center-part align-self-stretch" id="main">
             <div class="main-title">
                 <span class="main-span">Nicron</span>
                 <span class="moto-span">情难消受美人恩 白雪化蝶舞红尘</span>

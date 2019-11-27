@@ -63,18 +63,6 @@ ul, li {
     margin: 0px;
 }
 
-.side-fix:before {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-    display: block;
-    width: inherit;
-    background-color: #f0f3f4;
-    border: inherit;
-    content: "";
-}
-
 /*背景图片*/
 .bg {
     background-image: url(../images/bg.png);
@@ -125,35 +113,8 @@ ul, li {
     padding: 0.5rem 0rem;
 }
 
-/*logo*/
-.logo {
-    float: left;
-    margin-left: 20px;
-    margin-right: 30px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 30px;
-    text-decoration: none;
-}
-
-/*logo图片*/
-.logo img {
-    height: 50px;
-    float: left;
-    margin-right: 10px;
-}
-
-.listnostlye {
-    margin: 0px;
-    padding: 0px;
-    border: none;
-    list-style: none;
-}
 
 /*顶部栏右侧*/
-.navbar-right {
-    margin-right: 0px;
-}
 
 .search_box {
     display: inline-block;
@@ -345,6 +306,14 @@ ul, li {
     display: none;
 }
 
+.menu-item-has-children > ul{
+    display: none;
+}
+
+.menu-item-has-children:active >ul{
+    display: block;
+}
+
 /*个人信息*/
 .person-info {
     height: 215px;
@@ -410,9 +379,7 @@ ul, li {
     position: fixed;
     bottom: 0;
     background-color: #23282d;
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-right-color: rgba(54, 44, 124, 0.25);
+    border:0px;
 }
 
 /*右侧边栏*/
@@ -658,7 +625,6 @@ ul, li {
 
 .center-part {
     vertical-align: top;
-    height: 100%;
     width: calc(100% - 215px);
 }
 

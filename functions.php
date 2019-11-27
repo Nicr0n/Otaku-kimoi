@@ -16,10 +16,10 @@ function show_nav()
             $output = '<li class="drop-down">
 <span class="nav-label" id=' . $category->term_id . '>
 ' . $category->name . '
-</span>' . '<ul class="drop-down-content">
+</span>' . '<div class="drop-down-content"><ul>
 '//打印所有分类下文章
                 . get_articles($category->term_id) . '
-</ul>' . '
+</ul></div>' . '
 </li>';
             echo $output;
         }
@@ -215,6 +215,15 @@ if (function_exists('add_image_size')) {
 
 add_filter('wp_tag_cloud', 'colorCloud', 1);
 
+//注册菜单
+function register_my_menus() {
+    register_nav_menus(
+        array(
+            'left-menu' => __( '左侧菜单' )
+        )
+    );
+}
+add_action( 'init', 'register_my_menus' );
 ?>
 <?php
 //自定义评论列表模板

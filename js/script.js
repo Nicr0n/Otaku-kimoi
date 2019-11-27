@@ -26,14 +26,14 @@ $('.login-form-mask').click(function () {
 
 //设置导航栏多级下拉事件
 $('.drop-down>span').on('click',function () {
-    if($(this).next('ul').hasClass('drop-down-content')){
+    if($(this).next('div').hasClass('drop-down-content')){
         //未展开
-        $(this).next('ul').slideDown(200);
-        $(this).next('ul').removeClass('drop-down-content');
+        $(this).next('div').slideDown(200);
+        $(this).next('div').removeClass('drop-down-content');
     }else{
         //已展开
-        $(this).next('ul').slideUp(200);
-        $(this).next('ul').addClass('drop-down-content');
+        $(this).next('div').slideUp(200);
+        $(this).next('div').addClass('drop-down-content');
     }
 });
 
@@ -65,6 +65,9 @@ $('.rpt3').on('click',function () {
     $('.recent-comments').fadeIn(0);
     $('.recent-comments').addClass('rightfadein');
 });
+
+//
+
 
 function getRootPath(){
     //获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
