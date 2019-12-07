@@ -56,11 +56,17 @@ ul, li {
     list-style: none;
 }
 
+iframe{
+    min-width: 100%;
+    background:white;
+    height: 800px;
+}
+
 /*整体布局*/
 .container-fluid {
     position: absolute;
-    padding: 50px 0px 0px 0px;
-    margin: 0px;
+    padding: 0px;
+    margin: 50px 0px 0px 0px;
 }
 
 /*背景图片*/
@@ -113,8 +119,9 @@ ul, li {
     padding: 0.5rem 0rem;
 }
 
-
-/*顶部栏右侧*/
+.dropdown-item{
+    cursor:pointer;
+}
 
 .search_box {
     display: inline-block;

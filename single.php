@@ -1,4 +1,5 @@
 <?php
+/* template name: 文章模板*/
 get_header(); ?>
 <?php get_sidebar('left'); ?>
     <div class="content">
