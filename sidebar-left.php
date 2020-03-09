@@ -8,8 +8,8 @@
             </div>
             <span class="">Hi,I'm Nicron</span>
         </div>
-        <nav class="scroll">
-            <ul>
+        <nav>
+            <ul class="scroll-fix">
                 <li>
                     <span class="nav-font">导航</span>
                 </li>
@@ -26,14 +26,14 @@
                     <?php wp_nav_menu(array('theme_location' => 'left-menu',
                         'link_before' => '<span class="nav-label">',
                         'link_after' => '</span>',
-                        'container_class'=>'drop-down-content',
-                        'menu_class'=>"sec-nav",
+                        'container_class' => 'drop-down-content',
+                        'menu_class' => "sec-nav",
                     )); ?>
+                </li>
+                <li class="drop-down">
+                    <a href="<?php bloginfo('url');?>/作业展示"><span class="nav-label">作业展示</span></a>
                 </li>
             </ul>
         </nav>
-        <div class="waifu droppable">
-            <canvas id="live2d" width="215" height="250"></canvas>
-        </div>
     </aside>
 </div>

@@ -56,9 +56,9 @@ ul, li {
     list-style: none;
 }
 
-iframe{
+iframe {
     min-width: 100%;
-    background:white;
+    background: white;
     height: 800px;
 }
 
@@ -98,7 +98,8 @@ iframe{
     background-color: #E6E6FA;
     height: 50px;
 }
-.fixed-top>a{
+
+.fixed-top > a {
     line-height: 50px;
 }
 
@@ -110,17 +111,17 @@ iframe{
     height: 2rem
 }
 
-.navbar-toggler{
+.navbar-toggler {
     font-size: 1.0rem;
     margin-right: 0.8rem;
 }
 
-.navbar{
+.navbar {
     padding: 0.5rem 0rem;
 }
 
-.dropdown-item{
-    cursor:pointer;
+.dropdown-item {
+    cursor: pointer;
 }
 
 .search_box {
@@ -238,7 +239,7 @@ iframe{
 }
 
 .sidebar {
-    height: calc(100% - 305px);
+    height: 100%;
     width: 215px;
 }
 
@@ -250,7 +251,14 @@ iframe{
     border-right-color: rgba(54, 44, 124, 0.25);
     background-color: #23282d;
     position: fixed;
-    overflow: scroll;
+    overflow: hidden;
+}
+
+.sidebar-left {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+    width: 300px;
 }
 
 @media screen and (max-width: 768px) {
@@ -313,17 +321,18 @@ iframe{
     display: none;
 }
 
-.menu-item-has-children > ul{
+.menu-item-has-children > ul {
     display: none;
 }
 
-.menu-item-has-children:active >ul{
+.menu-item-has-children:active > ul {
     display: block;
 }
 
 /*个人信息*/
 .person-info {
     height: 215px;
+    width: 214px;
     border-bottom: 1px;
     border-bottom-color: rgba(54, 44, 124, 0.25);
     border-bottom-style: solid;
@@ -335,6 +344,10 @@ iframe{
 .person-info span {
     position: relative;
     top: 15px;
+}
+
+.scroll-fix {
+    width: 215px;
 }
 
 .left-avatar {
@@ -385,8 +398,9 @@ iframe{
 .waifu {
     position: fixed;
     bottom: 0;
-    background-color: #23282d;
-    border:0px;
+    background-color: transparent;
+    border: 0px;
+    z-index: 10000;
 }
 
 /*右侧边栏*/
@@ -775,6 +789,7 @@ iframe{
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(15px);
 }
+
 @media screen and (max-width: 1000px) {
     .footer {
         width: calc(100% - 216px);
@@ -784,7 +799,7 @@ iframe{
 @media screen and (max-width: 768px) {
     .footer {
         margin-left: 0px;
-        width:100%;
+        width: 100%;
     }
 }
 
@@ -794,7 +809,7 @@ iframe{
 }
 
 .single-post-layout {
-    max-width: 800px;
+    max-width: 1000px;
     margin-right: auto;
     margin-left: auto;
     padding: 50px;
@@ -846,7 +861,7 @@ iframe{
 
 .single-content {
     margin-top: 20px;
-    max-width: 800px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(255, 255, 255, 0.8);
@@ -893,7 +908,7 @@ figure {
 .single-comments {
     padding: 30px;
     margin-top: 20px;
-    max-width: 800px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(255, 255, 255, 0.8);

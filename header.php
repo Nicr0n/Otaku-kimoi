@@ -17,6 +17,9 @@
 </head>
 <title>Nicron's bolg</title>
 <body>
+<div class="waifu draggable">
+    <canvas id="live2d" width="215" height="250"></canvas>
+</div>
 <div class="container-fluid side-fix">
     <!--顶部栏 top-bar-->
     <nav class="navbar navbar-light navbar-expand-md fixed-top" role="navigation">

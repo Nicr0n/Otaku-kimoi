@@ -121,7 +121,7 @@ function colorCloudCallback($matches)
  *$postid:文章id
  *$which:返回类型（0或1）为0时返回评论人数，为1时返回评论条数
  */
-function count_comments($postid = 0, $which = 0)
+function get_count_comments($postid = 0, $which = 0)
 {
     $comments = get_comments('status=approve&type=comment&post_id=' . $postid); //获取文章的所有评论
     if ($comments) {
@@ -193,7 +193,7 @@ function par_pagenavi($range = 3)
 
 add_action('init', 'do_output_buffer');
 function do_output_buffer() {
-	ob_start();
+    ob_start();
 }
 
 //mb_strimwidth lowb替代
@@ -228,7 +228,7 @@ add_action( 'init', 'register_my_menus' );
 <?php
 //自定义评论列表模板
 function simple_comment($comment, $args, $depth) {
-$GLOBALS['comment'] = $comment; ?>
+    $GLOBALS['comment'] = $comment; ?>
 <li class="comment" id="li-comment-<?php comment_ID(); ?>">
     <div class="media">
         <div class="media-left">
@@ -254,5 +254,5 @@ $GLOBALS['comment'] = $comment; ?>
     </div>
 
     <?php
-    }
-    ?>
+}
+?>

@@ -20,7 +20,7 @@ get_header(); ?>
                                             the_views();
                                         } ?></li>
                                     <li><i class="fa fa-comment"
-                                           aria-hidden="true"></i><?php count_comments(the_ID(), 1) ?>条评论
+                                           aria-hidden="true"></i><?php echo(get_count_comments(get_the_ID(), 1)); ?>条评论
                                     </li>
                                     <li><i class="fa fa-tags" aria-hidden="true"></i><?php the_tags(); ?></li>
                                 </ul>
